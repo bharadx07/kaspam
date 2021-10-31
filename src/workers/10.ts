@@ -6,7 +6,6 @@ parentPort!.on("message", function (data) {
     let x = i;
     setTimeout(function () {
       let client = new Kahoot();
-      console.log(data[1] + " " + String(x) + " added");
       client.join(data[0], data[1] + " " + String(x));
       client.on("QuestionStart", (question: any) => {
         setTimeout(function () {
@@ -14,5 +13,5 @@ parentPort!.on("message", function (data) {
         }, i * (Math.random() * 15 + 8));
       });
     }, x * (Math.random() * 100 + 100 / 2));
-  }
+  } 
 });
