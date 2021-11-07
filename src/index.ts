@@ -6,7 +6,7 @@ import workerForm from "./modules/workerform";
 import workers from "./modules/workers";
 
 const app: Application = express();
-const server = createServer(app);
+const server = createServer(app); 
 
 app.use(express.json());
 
@@ -14,9 +14,9 @@ app.get("/", (_, res: Response) => {
   res.sendFile("views/index.html", { root: "./src" });
 });
 
-app.post("/send-bot", (req: Request, res: Response) => {
+app.post("/add-bot", (req: Request, res: Response) => {
   const data = workerForm(payload(req));
-
+ 
   try {
     workers.w1.postMessage(data);
     res.status(200).send({
