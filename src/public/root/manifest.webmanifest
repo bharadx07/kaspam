@@ -1,7 +1,7 @@
 {
   "background_color": "black",
   "categories": ["bots", "kahoot", "spammer"],
-  "description": "Kahoot Bot Spammer.",
+  "description": "Kahoot Bot Spammer",
   "display": "fullscreen",
   "icons": [
     {
