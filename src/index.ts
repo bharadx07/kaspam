@@ -12,6 +12,8 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(router);
 
-server.listen(8080, () => {
+const PORT = process.env.PORT || 8080
+
+server.listen(PORT, () => {
   console.log("Server Running at PORT 8080");
 });
