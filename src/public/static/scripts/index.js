@@ -30,7 +30,7 @@ const handleFormSubmit = (e) => {
   e.preventDefault();
   console.log(pinEl.value, prefixEl.value, botCountEl.value);
   addBot(pinEl.value, prefixEl.value, botCountEl.value);
-    // clear();
+  clear();
 };
 
 botForm.addEventListener("submit", handleFormSubmit);
