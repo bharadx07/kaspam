@@ -1,15 +1,17 @@
 const pinEl = document.querySelector(".pin");
-c
+const prefixEl = document.querySelector(".prefix");
+const botCountEl = document.querySelector(".count");
+const botForm = document.querySelector("form");
 
 const addBotURL = "/api/add-bot";
 
-const addBot = async () => {
+const addBot = async (gameKey, botName, botCount) => {
   const req = await fetch(addBotURL, {
     method: "POST",
     body: JSON.stringify({
-      gameKey: 3363786,
-      botName: "test",
-      botCount: 20,
+      gameKey: parseInt(gameKey),
+      botName,
+      botCount: parseInt(botCount),
     }),
     headers: {
       "Content-Type": "application/json",
@@ -18,4 +20,17 @@ const addBot = async () => {
   const res = await req.json();
 };
 
-// addBot();
+const clear = () => {
+  pinEl.value = "";
+  prefixEl.value = "";
+  botCountEl.value = "";
+};
+
+const handleFormSubmit = (e) => {
+  e.preventDefault();
+  console.log(pinEl.value, prefixEl.value, botCountEl.value);
+  addBot(pinEl.value, prefixEl.value, botCountEl.value);
+    // clear();
+};
+
+botForm.addEventListener("submit", handleFormSubmit);
