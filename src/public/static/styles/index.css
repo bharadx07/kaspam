@@ -21,7 +21,7 @@ main {
 }
 
 h1 {
-  font-size: 4.9rem;
+  font-size: 5.5rem;
 }
 
 h4 {
@@ -32,6 +32,9 @@ h4 {
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 0.8rem;
 }
 
@@ -69,4 +72,41 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 3rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+
+  }
+
+  input, button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  form {
+    width: 90%;
+  }
+}
+
 }

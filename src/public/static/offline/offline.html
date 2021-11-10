@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="content-security-policy"
+      content="upgrade-insecure-requests; default-src 'none'; script-src 'none'; script-src-elem 'unsafe-inline'; style-src 'none'; style-src-elem 'unsafe-inline'; manifest-src 'self'; font-src 'self'; img-src 'self'"
+    />
+
+    <title>You are offline!</title>
+
+    <style>
+      html {
+        background-color: #131620;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 0 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>You are not connected to the internet!</h1>
+      <p>Reconnect to the web and try again.</p>
+      <br />
+    </main>
+  </body>
+
+  <script>
+    function reload() {
+      if (location.pathname === "/offline") {
+        location.pathname = "/";
+      } else {
+        location.reload();
+      }
+    }
+
+    setInterval(reload, 60000);
+    window.addEventListener("online", reload);
+  </script>
+</html>

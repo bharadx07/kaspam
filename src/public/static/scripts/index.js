@@ -1,3 +1,7 @@
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/worker", { scope: "/" });
+}
+
 const pinEl = document.querySelector(".pin");
 const prefixEl = document.querySelector(".prefix");
 const botCountEl = document.querySelector(".count");
