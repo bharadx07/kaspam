@@ -1,2 +1,2 @@
 # 🤖 kaspam
-Flood a kahoot game with bots with one click!
+Flood a kahoot game with bots! Click [here](kaspam.herokuapp.com) to get started.
